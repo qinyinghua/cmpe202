@@ -1,4 +1,5 @@
 import java.util.Arrays;
+import java.util.ArrayList;
 public class GumballMachine
 {
 
@@ -8,6 +9,7 @@ public class GumballMachine
     private int[] coinsType;
     private int balance;
 
+
     public GumballMachine( int size, int cost, int[] coinsType )
     {
         // initialise instance variables
@@ -15,25 +17,36 @@ public class GumballMachine
         this.has_quarter = false;
         this.cost = cost;
         this.coinsType = coinsType;
+        this.balance=0;
     }
 
+    private boolean isAccepted(int coin) {
+        for(int coinType: coinsType)
+             if (coinType==coin) return true;
+        return false;
+    }
     public void insertQuarter(int coin)
     {
-        if ( coin == 25 )
-            this.has_quarter = true ;
-        else 
-            this.has_quarter = false ;
+        if (isAccepted(coin)) {
+            balance+=coin;
+            System.out.println("Coin ["+ String.valueOf(coin) + "] inserted! Balance:"+balance);
+        }
+        else {
+            System.out.println( "Error! Only Coins "+Arrays.toString(coinsType)+ 
+                                " Support.  Coin ["+ String.valueOf(coin) + "] Ejected!" ) ;
+        }
+   
     }
     
     public void turnCrank()
     {
-    	if ( this.has_quarter )
+    	if ( balance>=cost )
     	{
     		if ( this.num_gumballs > 0 )
     		{
     			this.num_gumballs-- ;
-    			this.has_quarter = false ;
-    			System.out.println( "Thanks for your quarter.  Gumball Ejected!" ) ;
+    			this.balance-= cost ;
+    			System.out.println( "Thanks for your coin.  Gumball Ejected!" ) ;
     		}
     		else
     		{
@@ -42,12 +55,12 @@ public class GumballMachine
     	}
     	else 
     	{
-    		System.out.println( "Please insert a quarter" ) ;
+    		System.out.println( "Error. Not enough balance. Please insert more coins." ) ;
     	}        
     }
     @Override 
     public String toString() {
-        return String.format("GumballMachine Size:%s; Cost:%s; CoinsAccept:%s",
+        return String.format("\nGumballMachine Size:%s; Cost:%s; CoinsAccept:%s",
                               num_gumballs,cost,Arrays.toString(coinsType));
     }       
 }

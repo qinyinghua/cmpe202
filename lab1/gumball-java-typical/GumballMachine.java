@@ -1,15 +1,20 @@
-
+import java.util.Arrays;
 public class GumballMachine
 {
 
     private int num_gumballs;
     private boolean has_quarter;
+    private int cost;
+    private int[] coinsType;
+    private int balance;
 
-    public GumballMachine( int size )
+    public GumballMachine( int size, int cost, int[] coinsType )
     {
         // initialise instance variables
         this.num_gumballs = size;
         this.has_quarter = false;
+        this.cost = cost;
+        this.coinsType = coinsType;
     }
 
     public void insertQuarter(int coin)
@@ -40,4 +45,9 @@ public class GumballMachine
     		System.out.println( "Please insert a quarter" ) ;
     	}        
     }
+    @Override 
+    public String toString() {
+        return String.format("GumballMachine Size:%s; Cost:%s; CoinsAccept:%s",
+                              num_gumballs,cost,Arrays.toString(coinsType));
+    }       
 }

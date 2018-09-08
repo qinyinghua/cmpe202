@@ -25,7 +25,7 @@ public class GumballMachine
              if (coinType==coin) return true;
         return false;
     }
-    public void insertQuarter(int coin)
+    public void insert(int coin)
     {
         if (isAccepted(coin)) {
             balance+=coin;

@@ -1,0 +1,19 @@
+#BlueJ class context
+comment0.target=HasEnoughBalanceState
+comment1.params=gumballMachine
+comment1.target=HasEnoughBalanceState(GumballMachine)
+comment2.params=coin
+comment2.target=void\ insert(int)
+comment2.text=\r\n\ @see\ State\#insert(int)\r\n
+comment3.params=
+comment3.target=void\ eject()
+comment3.text=\r\n\ @see\ State\#eject(int)\r\n
+comment4.params=
+comment4.target=void\ turnCrank()
+comment4.text=\r\n\ @see\ State\#turnCrank()\r\n
+comment5.params=
+comment5.target=void\ dispense()
+comment5.text=\r\n\ @see\ State\#dispense()\r\n
+comment6.params=
+comment6.target=java.lang.String\ toString()
+numComments=7

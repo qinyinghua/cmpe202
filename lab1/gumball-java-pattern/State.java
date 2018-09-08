@@ -1,9 +1,11 @@
-
-
 public interface State {
- 
-	public void insertQuarter();
-	public void ejectQuarter();
-	public void turnCrank();
-	public void dispense();
+
+	public abstract void insert(int coin);
+
+	public abstract void eject();
+
+	public abstract void turnCrank();
+
+	public abstract void dispense();
+
 }

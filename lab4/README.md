@@ -10,7 +10,7 @@
 
 | **RESPONSIBILITES**                                          |
 | ------------------------------------------------------------ |
-| Assign customer status<br />Provide the availability of tables <br />Notify the customers on the waiting list |
+| **Know<br /><br />subjectState<br />observers<br /><br />Do**<br />Assign customer status<br />Provide the availability of tables <br />Notify the customers on the waiting list |
 | **COLLABORATORS**                                            |
 | Customer                                                     |
 
@@ -18,7 +18,7 @@
 
 | **RESPONSIBILITES**                                          |
 | ------------------------------------------------------------ |
-| Signup with name, cell number and number of people in the party<br />Confirm on the way by response a "confirm" message<br />Cancel by response a "leave" message |
+| **Know<br /><br />observerState<br />subject<br /><br />Do**<br /><br />Signup with name, cell number and number of people in the party<br />Confirm on the way by response a "confirm" message<br />Cancel by response a "leave" message |
 | **COLLABORATORS**                                            |
 | Restaurant                                                   |
 

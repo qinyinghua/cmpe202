@@ -26,4 +26,20 @@
 
  **An explanation of why you chose the Pattern (or Patterns) in your Design and also list the Objects (from your CRC list) that play which Role (Participant) in the Pattern(s).**
 
- 
+**Observer** pattern is a behavioral software **design pattern** in which a subject maintains a list of subscribers called observers and notifies them of any state changes usually by calling one of their methods. Once state change notification is received observer can request current state of the subject. [1]
+
+![](C:\Yinghua\SJSU\2018Fall\CMPE202\YinghuaGithub\cmpe202\lab4\composite-structure-example-observer.png)
+
+In our use case, the "Din Tai Fung" **restaurant** is a subject. 
+
+It maintains a list of subscribers / observers which in this case is a list of **customers**.  
+
+**When there is any state changes** - table available or not available in this case,  the restaurant will notify the customers by calling one of the customer object methods. 
+
+**Once the state change notification is received** by the customer object, the customer object can request current state of the restaurant (the subject object).
+
+
+
+## References
+
+[1] https://www.uml-diagrams.org/observer-pattern-uml-composite-diagram-example.html

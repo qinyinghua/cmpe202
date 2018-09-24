@@ -28,7 +28,7 @@
 
 **Observer** pattern is a behavioral software **design pattern** in which a subject maintains a list of subscribers called observers and notifies them of any state changes usually by calling one of their methods. Once state change notification is received observer can request current state of the subject. [1]
 
-![](C:\Yinghua\SJSU\2018Fall\CMPE202\YinghuaGithub\cmpe202\lab4\composite-structure-example-observer.png)
+![](https://github.com/qinyinghua/cmpe202/blob/master/lab4/composite-structure-example-observer.png)
 
 In our use case, the "Din Tai Fung" **restaurant** is a subject. 
 

@@ -9,5 +9,5 @@ public interface IPrintStrategy {
 	/**
 	 * print out the data
 	 */
-	void print();
+	void print(IComponent main);
 }

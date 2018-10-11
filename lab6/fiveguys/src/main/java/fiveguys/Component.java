@@ -15,8 +15,8 @@ public class Component implements IComponent{
 	private float subtotal; //the price
 	
 	private static int NICK_NAME_LENGTH=15;
-	private static int SUBTOTAL_LENGTH=60;
-	private static int COMPONENT_LENGTH=20;
+	private static int SUBTOTAL_LENGTH=40;
+	private static int COMPONENT_LENGTH=10;
 	private static String BOTTOM_PREFIX="->|";
 
 	private int calory;
@@ -24,19 +24,19 @@ public class Component implements IComponent{
 	
 	private IPrintStrategy receiptPrint=new IPrintStrategy() {
 		@Override
-		public void print() {
-			String str=String.format("%s%s%s", qty,Help.fs(nickName,NICK_NAME_LENGTH),Help.fs(subtotal,SUBTOTAL_LENGTH));
+		public void print(IComponent main) {
+			String str=String.format("%s%s%s\n", qty,Help.fs(nickName,NICK_NAME_LENGTH),Help.fs(price,SUBTOTAL_LENGTH));
 			System.out.print(str);	
 			printMeat();
-			printComponents();
+			printComponents(main);
 			
 		}};
 		private IPrintStrategy packPrint=new IPrintStrategy() {
 			@Override
-			public void print() {
-				String str=String.format("%s%s", qty,Help.fs(nickName,NICK_NAME_LENGTH));
+			public void print(IComponent main) {
+				String str=String.format("%s%s\n", qty,Help.fs(nickName,NICK_NAME_LENGTH));
 				System.out.print(str);					
-				printComponents();
+				printComponents(main);
 				printMeat();
 		}};
 	
@@ -46,17 +46,19 @@ public class Component implements IComponent{
 		 */
 	public void printMeat() {
 		if(meat!=null && meat.length()>0) {
-			String str="{{{{ "+meat+" }}}}";
+			String str="          {{{{ "+meat+" }}}}";
 			System.out.println(str);
 		}		
 	}
 	
-	public void printComponents() {
-		int total=components.size();
+	public void printComponents(IComponent main) {
+		ArrayList<IComponent> coms=main.components();
+		if (coms==null) return;
+		int total=coms.size();
 		int count=0;
 		boolean top=true;
 		String prefix="";
-		for(IComponent c:components) {
+		for(IComponent c:coms) {
 			System.out.print(Help.fs(prefix,COMPONENT_LENGTH));
 			c.print();
 			count+=1;
@@ -90,8 +92,8 @@ public class Component implements IComponent{
 
 	@Override
 	public void print() {
-		if(this.getClass().equals("Topping")) {System.out.println(nickName);return;}  //no print top item for Topping
-		printStrategy.print();
+		if(this instanceof Topping) {System.out.println(nickName);return;}  //no print top item for Topping
+		printStrategy.print(this);
 	}
 	
 	@Override
@@ -113,4 +115,7 @@ public class Component implements IComponent{
 	 * The total child components
 	 */
 	public int count() {return components.size();}
+
+	@Override
+	public ArrayList<IComponent> components() {return this.components;}
 }

@@ -1,5 +1,7 @@
 package fiveguys;
 
+import java.util.ArrayList;
+
 /**
  * 
  * Burger Component Interface
@@ -58,6 +60,13 @@ public interface IComponent extends Cloneable{
 	/**
 	 * The total child components
 	 */
-	int count();
+int count();
+
+/**
+ * Get child component via index
+ * @param index  the index of child component to get
+ * @return child component
+ */
+ ArrayList<IComponent> components();
   
 }

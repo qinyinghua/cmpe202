@@ -18,29 +18,30 @@ public class Order implements IOrder{
 	
 	private IPrintStrategy receiptPrint=new IPrintStrategy() {
 		@Override
-		public void print() {
+		public void print(IComponent main) {
 			System.out.println(HEADER);
 			String dateStr = df.format(new Date()).toString();
-			System.out.println(Help.fs(dateStr,40));
-			System.out.println(storeName);
+			System.out.println(Help.fs(dateStr,30));
+			System.out.println(Help.fs(storeName,20));
 			System.out.println("Order Number:"+sequence);
-			for(IComponent c:components) {c.setReceiptStrategy();c.print();}
+			for(IComponent c:components) {c.setReceiptStrategy();c.print();System.out.println();}
 			System.out.println("Total:"+getTotal());
 		}};
 		private IPrintStrategy packPrint=new IPrintStrategy() {
 			@Override
-			public void print() {
+			public void print(IComponent main) {
+				System.out.println("\n---------------PACK---------------------------\n");
 				System.out.println("Patties  - 1"); //? todo
 				System.out.println("Order Number:"+sequence);
 				String dateStr = df.format(new Date()).toString();
-				System.out.println(Help.fs(dateStr,40));
-				System.out.println(storeName);
-				for(IComponent c:components) {c.setPackStrategy();c.print();}
+				System.out.println(Help.fs(dateStr,30));
+				System.out.println(Help.fs(storeName,20));
+				for(IComponent c:components) {c.setPackStrategy();c.print();System.out.println();}
 		}};
 	
 	
 	private final static String storeName="FIVE GUYS";
-	private final static String HEADER=storeName+"\n"
+	private final static String HEADER="\n---------------Receipt---------------------------\n"+storeName+"\n"
 			+ "BURGERS AND FRIES\n"
 			+ "STORE # CA-1294\n"
 			+ "5353 ALMADEN EXPY N60\n"
@@ -68,13 +69,13 @@ public class Order implements IOrder{
 	@Override
 	public void printReceipt() {
 		printStrategy=receiptPrint;
-		printStrategy.print();
+		printStrategy.print(null);
 	}
 
 	@Override
 	public void printPack() {
 		printStrategy=packPrint;
-		printStrategy.print();
+		printStrategy.print(null);
 	}
 	
 	@Override

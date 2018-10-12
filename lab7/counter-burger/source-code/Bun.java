@@ -1,9 +1,10 @@
-public class Cheese extends LeafDecorator
-{
+
+public class Bun extends LeafDecorator {
+
     protected String[] options ;
     
     
-    public Cheese( String d )
+    public Bun( String d )
     {
         super(d) ;
     }
@@ -12,8 +13,12 @@ public class Cheese extends LeafDecorator
     public void setOptions( String[] options )
     {
         this.options = options ;
-        if ( options.length > 1 )
-            this.price += (options.length-1) * 1.00 ;
+        for ( int i = 0; i<options.length; i++ )
+        {
+            if ( "Gluten-Free Bun".equals(options[i]) ) this.price += 1.00 ;
+            if ( "Hawaiian Bun".equals(options[i]) ) this.price += 1.00 ;
+            if ( "Pretzel Bun".equals(options[i]) ) this.price += 0.5 ;
+        }
     }
     
     public String getDescription() 
@@ -26,5 +31,5 @@ public class Cheese extends LeafDecorator
         }        
         return desc ;
     }
-    
+
 }

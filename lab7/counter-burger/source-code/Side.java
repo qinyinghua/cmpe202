@@ -1,9 +1,11 @@
-public class Cheese extends LeafDecorator
-{
+import java.util.Arrays;
+
+public class Side extends LeafDecorator {
+
     protected String[] options ;
     
     
-    public Cheese( String d )
+    public Side( String d )
     {
         super(d) ;
     }
@@ -12,8 +14,8 @@ public class Cheese extends LeafDecorator
     public void setOptions( String[] options )
     {
         this.options = options ;
-        if ( options.length > 1 )
-            this.price += (options.length-1) * 1.00 ;
+        if(Arrays.asList(options).contains("No Side")) this.price=0.0;
+        else this.price += 3.00 ;
     }
     
     public String getDescription() 
@@ -26,5 +28,5 @@ public class Cheese extends LeafDecorator
         }        
         return desc ;
     }
-    
+
 }

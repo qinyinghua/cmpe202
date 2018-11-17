@@ -12,20 +12,3 @@ Reference:
 
 https://github.com/paulnguyen/cmpe202/tree/master/patterns (Links to an external site.)Links to an external site. 
 https://github.com/paulnguyen/cmpe202/tree/master/java8 (Links to an external site.)Links to an external site. 
-
-#Lambda Function for Chain of Responsibility Design Pattern
-
-Implement the Lambda function on the "Client" and "Handler" objects. 
-
-## Use the Java JDK 8 standard funcational interface "Predicate".  
-
-        // Predicate functions
-        Predicate<String> h1Tester =  (a) -> a.equalsIgnoreCase("R1");		
-        Predicate<String> h2Tester  = (a) -> a.equalsIgnoreCase("R2");
-        Predicate<String> h3Tester  = (a) -> a.equalsIgnoreCase("R3");
-        
-## Use the Java JDK 8 "Stream" to obtain a source of objects
-
-        requests.stream().forEach(p -> {System.out.println( "Sending "+p+"..."); h1.handleRequest(p);});
-        
-        

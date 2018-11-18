@@ -13,20 +13,20 @@ Folder structure:
 ## Lambda Function for Chain of Responsibility Design Pattern
 Implement the Lambda function on the "Client" and "Handler" objects. 
 
-### Use the Java JDK 8 standard funcational interface "Predicate".  
+Use the Java JDK 8 standard funcational interface "Predicate".  
 
         // Predicate functions
         Predicate<String> h1Tester =  (a) -> a.equalsIgnoreCase("R1");		
         Predicate<String> h2Tester  = (a) -> a.equalsIgnoreCase("R2");
         Predicate<String> h3Tester  = (a) -> a.equalsIgnoreCase("R3");
         
-###  Use the Java JDK 8 "Stream" to obtain a source of objects
+Use the Java JDK 8 "Stream" to obtain a source of objects
 
         requests.stream().forEach(p -> {System.out.println( "Sending "+p+"..."); h1.handleRequest(p);});
         
 ## Lambda Function for Strategy Design Pattern
 
-### Use the Java JDK 8 Lambda function to add different sorting strategy into the list.  
+Use the Java JDK 8 Lambda function to add different sorting strategy into the list.  
 
         List<SortingStrategy> sortingStrategies = new ArrayList<SortingStrategy>();
         sortingStrategies.add((a)-> { new BubbleSort().sort(a);});
@@ -34,6 +34,6 @@ Implement the Lambda function on the "Client" and "Handler" objects.
         sortingStrategies.add((a)-> { new QuickSort().sort(a);});
 
 
-### Use the Java JDK 8 Lambda function change strategy, sort and display the sorting result.  
+Use the Java JDK 8 Lambda function change strategy, sort and display the sorting result.  
 
         sortingStrategies.forEach(  (s) -> {dataset.changeStrategy(s); dataset.doSort(); dataset.display(); dataset.resetData(); } );     

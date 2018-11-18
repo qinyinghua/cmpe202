@@ -10,7 +10,7 @@ Folder structure:
 - chain_of_responsibility_lambda  (the lambda implementation)
 
 
-##Lambda Function for Chain of Responsibility Design Pattern
+## Lambda Function for Chain of Responsibility Design Pattern
 Implement the Lambda function on the "Client" and "Handler" objects. 
 
 ### Use the Java JDK 8 standard funcational interface "Predicate".  
@@ -24,7 +24,7 @@ Implement the Lambda function on the "Client" and "Handler" objects.
 
         requests.stream().forEach(p -> {System.out.println( "Sending "+p+"..."); h1.handleRequest(p);});
         
-##Lambda Function for Strategy Design Pattern
+## Lambda Function for Strategy Design Pattern
 
 ### Use the Java JDK 8 Lambda function to add different sorting strategy into the list.  
 

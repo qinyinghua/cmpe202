@@ -77,8 +77,10 @@ Take screenshots of the Feature Model Configuration for each Machine along with 
   ![](./README.assets/1543103994232.png)
 
 - My Feature IDE project folder: 
-- ./features/workspace/GumballMachineV1
-- ./features/workspace/GumballMachineV2
+- https://github.com/qinyinghua/cmpe202/tree/master/lab10/features/workspace/GumballMachineV1
+- https://github.com/qinyinghua/cmpe202/tree/master/lab10/features/workspace/GumballMachineV2
+
+
 
 
 

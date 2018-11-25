@@ -76,7 +76,9 @@ Take screenshots of the Feature Model Configuration for each Machine along with 
 
   ![](./README.assets/1543103994232.png)
 
-- My Feature IDE project folder: <URL here>
+- My Feature IDE project folder: 
+- ./features/workspace/GumballMachineV1
+- ./features/workspace/GumballMachineV2
 
 
 
